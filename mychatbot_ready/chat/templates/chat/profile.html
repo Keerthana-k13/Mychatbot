@@ -1,0 +1,52 @@
+{% extends 'chat/base.html' %}
+{% block content %}
+  <h2>Your Profile</h2>
+  <p><strong>Username:</strong> {{ request.user.username }}</p>
+  <p><strong>Email:</strong> {{ request.user.email }}</p>
+  <!-- You can add more fields here later -->
+{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - MyChatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef1f6;
+            display: flex;
+            justify-content: center;
+            padding-top: 80px;
+        }
+        .profile-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+        .info {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <h2>User Profile</h2>
+        <div class="info"><strong>Username:</strong> {{ user.username }}</div>
+        <div class="info"><strong>Email:</strong> {{ user.email }}</div>
+        <a href="{% url 'chat' %}">Back to Chat</a>
+    </div>
+</body>
+</html>
+
